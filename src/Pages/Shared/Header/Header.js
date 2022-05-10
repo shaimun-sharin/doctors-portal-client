@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Header = () => {
-  const menItems = (
+  const menuItems = (
     <>
       <li>
         <Link to="/">Home</Link>
@@ -49,13 +49,17 @@ const Header = () => {
             tabindex="0"
             class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
           >
-            {menItems}
+            {menuItems}
           </ul>
         </div>
-        <a class="btn btn-ghost normal-case text-xl">Doctors Portal</a>
+        <a>
+          <Link to="/" className="btn btn-ghost normal-case text-xl">
+            Doctors Portal
+          </Link>
+        </a>
       </div>
       <div class="navbar-center hidden lg:flex">
-        <ul class="menu menu-horizontal p-0">{menItems}</ul>
+        <ul class="menu menu-horizontal p-0">{menuItems}</ul>
       </div>
     </div>
   );
