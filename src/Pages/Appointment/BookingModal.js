@@ -1,13 +1,14 @@
 import React from "react";
 import { format } from "date-fns";
 
-const BookingModal = ({ date, treatment }) => {
-  const { name, slots } = treatment;
-  //   const handleBooking = (event) => {
-  //     event.preventDefault();
-  //     const slot = event.target.slot.value;
-  //     console.log(slot);
-  //   };
+const BookingModal = ({ date, treatment, setTreatment }) => {
+  const { _id, name, slots } = treatment;
+  const handleBooking = (event) => {
+    event.preventDefault();
+    const slot = event.target.slot.value;
+    console.log(slot);
+    setTreatment(null);
+  };
   return (
     <div>
       <input type="checkbox" id="booking-modal" class="modal-toggle" />
@@ -17,7 +18,7 @@ const BookingModal = ({ date, treatment }) => {
             Booking For : <span className="text-red-400">{name}</span>
           </h3>
           <form
-            // onSubmit={handleBooking}
+            onSubmit={handleBooking}
             className="grid pt-2 grid-cols-1 gap-3 justify-items-center"
           >
             <input
@@ -28,7 +29,9 @@ const BookingModal = ({ date, treatment }) => {
             />
             <select name="slot" class="select select-bordered w-full max-w-xs">
               {slots.map((slot) => (
-                <option value={slot}>{slot}</option>
+                <option key={_id} value={slot}>
+                  {slot}
+                </option>
               ))}
             </select>
             <input
