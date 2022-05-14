@@ -4,7 +4,9 @@ import "./App.css";
 import About from "./Pages/About/About";
 import Appointment from "./Pages/Appointment/Appointment";
 import Home from "./Pages/Home/Home/Home";
-import LogIn from "./Pages/LogIn/LogIn/LogIn ";
+import Login from "./Pages/LogIn/LogIn";
+
+import SignUp from "./Pages/LogIn/SignUp";
 
 function App() {
   return (
@@ -18,7 +20,8 @@ function App() {
           path="/appointment"
           element={<Appointment></Appointment>}
         ></Route>
-        <Route path="/login" element={<LogIn></LogIn>}></Route>
+        <Route path="/login" element={<Login></Login>}></Route>
+        <Route path="/signup" element={<SignUp></SignUp>}></Route>
       </Routes>
     </div>
   );
