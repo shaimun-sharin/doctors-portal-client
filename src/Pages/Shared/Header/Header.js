@@ -38,9 +38,7 @@ const Header = () => {
           <Link to="/login">Login</Link>
         )}
       </li>
-      <li>
-        <Link to="/signup">Sign Up</Link>
-      </li>
+
       {user && (
         <li>
           <Link to="/dashboard">Dashboard</Link>
