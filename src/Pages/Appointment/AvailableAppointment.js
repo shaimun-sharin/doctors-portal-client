@@ -13,9 +13,9 @@ const AvailableAppointment = ({ date }) => {
     isLoading,
     refetch,
   } = useQuery(["available", formatedDate], () =>
-    fetch(`http://localhost:5000/available?date=${formatedDate}`).then((res) =>
-      res.json()
-    )
+    fetch(
+      `https://rocky-beach-02886.herokuapp.com/available?date=${formatedDate}`
+    ).then((res) => res.json())
   );
   if (isLoading) {
     return <Loading></Loading>;
