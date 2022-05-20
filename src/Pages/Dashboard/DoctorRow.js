@@ -14,7 +14,7 @@ const DoctorRow = ({ doctor, refetch, index }) => {
       .then((data) => {
         console.log(data);
         if (data.deletedCount) {
-          toast.success(`doctor ${name} is deleted`);
+          toast.success(` ${name} is deleted`);
           refetch();
         }
       });
