@@ -16,6 +16,7 @@ import MyReviews from "./Pages/Dashboard/MyReviews";
 import MyHistory from "./Pages/Dashboard/MyHistory";
 import Users from "./Pages/Dashboard/Users";
 import RequireAdmin from "./Pages/LogIn/RequireAdmin";
+import AddDoctor from "./Pages/Dashboard/AddDoctor";
 function App() {
   return (
     <div>
@@ -48,6 +49,14 @@ function App() {
             element={
               <RequireAdmin>
                 <Users></Users>
+              </RequireAdmin>
+            }
+          ></Route>
+          <Route
+            path="addDoctor"
+            element={
+              <RequireAdmin>
+                <AddDoctor></AddDoctor>
               </RequireAdmin>
             }
           ></Route>
