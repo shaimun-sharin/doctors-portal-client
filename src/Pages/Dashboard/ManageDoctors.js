@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { useQuery } from "react-query";
 import Loading from "../Shared/Loading";
+import DeleteModal from "./DeleteModal";
 import DoctorRow from "./DoctorRow";
 
 const ManageDoctors = () => {
+  const [deleteDoctor, setDeleteDoctor] = useState(null);
   const {
     data: doctors,
     isLoading,
@@ -25,7 +27,7 @@ const ManageDoctors = () => {
         <table class="table w-full">
           <thead>
             <tr>
-              <th></th>
+              <th>No.</th>
               <th>Avatar</th>
               <th>Name</th>
               <th>Speciality</th>
@@ -39,11 +41,19 @@ const ManageDoctors = () => {
                 doctor={doctor}
                 refetch={refetch}
                 index={index}
+                setDeleteDoctor={setDeleteDoctor}
               ></DoctorRow>
             ))}
           </tbody>
         </table>
       </div>
+      {deleteDoctor && (
+        <DeleteModal
+          deleteDoctor={deleteDoctor}
+          refetch={refetch}
+          setDeleteDoctor={setDeleteDoctor}
+        ></DeleteModal>
+      )}
     </div>
   );
 };
