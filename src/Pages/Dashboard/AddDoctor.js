@@ -57,10 +57,10 @@ const AddDoctor = () => {
         }
       });
   };
-
   if (isLoading) {
     return <Loading></Loading>;
   }
+
   return (
     <div>
       <h1 className="text-2xl">Add a Doctor</h1>
